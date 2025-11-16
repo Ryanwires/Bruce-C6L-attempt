@@ -1,0 +1,38 @@
+{
+  "build": {
+    "core": "esp32",
+    "extra_flags": [
+      "-DBOARD_M5STACK_C6L"
+    ]
+  },
+  "board": "esp32-c6-devkitm-1",
+  "frameworks": ["arduino"],
+  "upload": {
+    "maximum_size": 0x800000,
+    "maximum_ram_size": 0x400000
+  },
+  "modules": {
+    "oled": {
+      "type": "SSD1306_SPI",
+      "spi_bus": "VSPI_HOST",
+      "mosi_pin": 21,
+      "sck_pin": 20,
+      "cs_pin": "LED_DATA_PIN",
+      "dc_pin": "OLED_DC_PIN",
+      "rst_pin": "OLED_RST_PIN"
+    },
+    "lora": {
+      "type": "SX1262",
+      "nss_pin": 22,
+      "irq_pin": "LORA_IRQ_PIN",
+      "rst_pin": "LORA_RST_PIN"
+    },
+    "led": {
+      "type": "WS2812",
+      "data_pin": "LED_DATA_PIN"
+    },
+    "button": {
+      "pin": "BUTTON_PIN"
+    }
+  }
+}
