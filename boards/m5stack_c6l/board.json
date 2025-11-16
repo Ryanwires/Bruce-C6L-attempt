@@ -1,0 +1,41 @@
+{
+  "name": "M5Stack C6L",
+  "mcu": "esp32c6",
+  "display": {
+    "type": "SSD1306_SPI",
+    "width": 128,
+    "height": 64,
+    "pins": {
+      "cs": 6,
+      "dc": 18,
+      "rst": 15,
+      "mosi": 21,
+      "sck": 20
+    }
+  },
+  "lora": {
+    "type": "SX1262",
+    "pins": {
+      "cs": 23,
+      "mosi": 21,
+      "miso": 22,
+      "sck": 20,
+      "irq": 7,
+      "busy": 19,
+      "reset": "E0_P7"
+    },
+    "extra": {
+      "ant_sw": "E0_P6",
+      "lna_en": "E0_P5"
+    }
+  },
+  "buzzer": 11,
+  "rgb_led": {
+    "type": "WS2812",
+    "pin": 2
+  },
+  "button": {
+    "type": "io_expander",
+    "pin": "P0"
+  }
+}
